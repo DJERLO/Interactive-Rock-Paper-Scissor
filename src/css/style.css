@@ -341,16 +341,16 @@ h1 {
 
 /* Specify individual background images for each game choice */
 .rock {
-    background-image: url('img/Rock.png');
+    background-image: url('./img/Rock.png');
 }
 
 .paper {
-    background-image: url('img/Paper.png');
+    background-image: url('./img/Paper.png');
     background-size: 50%;
 }
 
 .scissor {
-    background-image: url('img/Scissor.png');
+    background-image: url('./img/Scissor.png');
 }
 
 /* Add hover and active effects for the game buttons */
