@@ -1,0 +1,499 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s; /* Add a background color transition */
+    overflow: hidden; /* Hide horizontal scrollbar */
+}
+
+
+.header{
+  font-size: 2.8em;
+}
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Use min-height to ensure full viewport height */
+  overflow-y: auto; /* Add vertical scrolling when content exceeds screen height */
+  margin-right:15px ;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 15px auto;
+    max-width: 90%;
+    user-select: none;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    
+}
+
+/* Style for the game menu */
+.game-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+    45deg,
+    #0072ff,
+    #0072ff 5%,
+    #00c6ff 5%,
+    #00c6ff 10%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: 20vw 20vw;
+    animation: move-it 2s linear infinite;
+    z-index: 998;
+  
+}
+
+.menu-wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background:rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    color: black; /* Set the text color to black */
+    padding :300px;
+}
+
+@keyframes move-it {
+  0% {
+    background-position: initial;
+  }
+  100% {
+    background-position: 100px 0px;
+  }
+}
+
+.banner {
+  position: flex;
+  z-index: 100; /* Adjust the z-index to ensure it's above other content */
+  user-select: none;
+  pointer-events: none;
+}
+
+.game-menu h1 {
+    font-size: 2rem;
+    color: #fff;
+    user-select: none;
+    pointer-events: none;
+}
+
+.game-menu button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    user-select: none;
+}
+
+/* Style for the button on hover */
+.game-menu button:hover {
+    background-color: #2980b9;
+    user-select: none;
+}
+
+/* Style for the button on active */
+.game-menu button:active {
+    background-color: #149cb8;
+    user-select: none;
+}
+
+.game-menu p, a {
+  color: #fff;
+  user-select: none;
+}
+
+
+/* Countdown modal styles */
+.start-countdown {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.startcountdown-display {
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 10rem;
+    padding: 20px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+
+/* Style for the game limit modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+}
+
+/* Style for the modal content */
+.modal-content {
+    background-color: #fff;
+    border-radius: 25px;
+    text-align: center;
+    width: 75%;
+    max-width: 600px;
+    margin: 15% auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    user-select: none;
+    
+}
+
+/* Style for the modal title */
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Style for the modal buttons */
+.modal-content button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Style for the buttons on hover */
+.modal-content button:hover {
+    background-color: #2980b9;
+}
+
+/* Style for the buttons on active */
+.modal-content button:active {
+    background-color: #149cb8;
+}
+
+
+/* Scoreboard content */
+.scoreboard-box {
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.scoreboard {
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Style for the scoreboard headings */
+.scoreboard h2 {
+    font-size: 1.75rem; /* Adjust font size for h2 */
+    margin: 0;
+    color: #333; /* Choose a color that complements your design */
+}
+
+/* Style for the scoreboard scores */
+.scoreboard p {
+    font-size: 2rem; /* Adjust font size for p */
+    margin: 0;
+    color: #333; /* Choose a color that complements your design */
+}
+
+
+/* Set a fixed height for player and computer choices */
+.player-hands, .player-hands p {
+    height: 100%;
+    margin-left: 4.5vh;
+    margin-right: 4.5vh;
+}
+
+/* Center align text within player-choice and computer-choice */
+.display-choice {
+  text-align: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Style for the score numbers */
+.score-number {
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#game-result{
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.game-option {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    cursor: pointer;
+    background-size: cover;
+    border: 3px solid #333;
+    transition: transform 0.2s;
+}
+
+.display-section{
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Add margins and padding for the display elements */
+.display-choice {
+    margin: 10px;
+    padding: 5px;
+}
+
+/* Add styles for the display-result class */
+.display-result {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 10px auto;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Game buttons */
+.game-button {
+    display: inline-flex; /* Use flexbox to make the buttons appear in a row */
+    align-items: center; /* Center the buttons vertically */
+    justify-content: center; /* Center the buttons horizontally */
+    margin: 2px; /* Add some margin to the buttons */
+}
+
+#game-buttons{
+  display: block;
+}
+
+#game-option button {
+  display: block;
+  margin-right: 0;
+}
+
+.game-option:hover {
+    transform: scale(1.1); /* Add a hover effect to scale the buttons */
+}
+
+/* Game Choice Buttons */
+.rock, .paper, .scissor {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%; /* Use 100% for consistent background size */
+}
+
+/* Define a common style for the game buttons */
+.game-option {
+    width: 150px; /* Adjust the width for your choice */
+    height: 150px; /* Adjust the height for your choice */
+    margin: 10px;
+    cursor: pointer;
+    border: 3px solid #333;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    border-radius: 50%; /* Make them circular */
+}
+
+/* Specify individual background images for each game choice */
+.rock {
+    background-image: url('img/Rock.png');
+}
+
+.paper {
+    background-image: url('img/Paper.png');
+    background-size: 50%;
+}
+
+.scissor {
+    background-image: url('img/Scissor.png');
+}
+
+/* Add hover and active effects for the game buttons */
+.game-option:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2); /* Adjust brightness to make them pop on hover */
+    background-color: #8d1616; /* Change background color on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a shadow effect on hover */
+}
+
+/* Reset background color and shadow on button click */
+.game-option:active {
+    background-color: #11ff00;
+    box-shadow: none;
+}
+
+
+/* Common styles for game options */
+.game-option {
+    cursor: pointer;
+    border: 3px solid #333;
+    background-size: contain;
+    transition: transform 0.2s;
+}
+
+/*Player hands animation*/
+.hands-panel{
+  display:none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hands-panel player{
+  display:none;
+}
+
+.hands-panel computer{
+  display:none;
+}
+
+/* Shared styles for all screen sizes */
+.header {
+    font-size: 3em;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Responsive styles for different screen sizes */
+@media screen and (max-width: 768px) {
+    .header {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+    .container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    .scoreboard h2 {
+        font-size: 1rem; /* Adjust font size for h2 on smaller screens */
+    }
+    .scoreboard p {
+        font-size: 1.5rem; /* Adjust font size for p on smaller screens */
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {
+    .header {
+        font-size: 2.2em; /* Adjust font size for smaller screens */
+    }
+    .container {
+        padding: 20px; /* Keep padding consistent with shared styles */
+    }
+    .scoreboard h2 {
+        font-size: 1.2rem; /* Adjust font size for h2 on smaller screens */
+    }
+    .scoreboard p {
+        font-size: 1.7rem; /* Adjust font size for p on smaller screens */
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .header {
+       font-size: 2.5em;
+    }
+    .container {
+        padding: 30px; /* Adjust padding as needed for large screens */
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1919px) {
+    .header {
+        font-size: 4em;
+    }
+    .container {
+        padding: 40px; /* Adjust padding as needed for larger screens */
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .header {
+        font-size: 5em; /* Adjust font size for screens larger than 1920px */
+    }
+    .container {
+        padding: 50px; /* Adjust padding for screens larger than 1920px */
+    }
+}
+
+
+/* Define the animation for the player's hand */
+@keyframes playerHandMotion {
+  0%, 100% {
+    transform: translateY(0); /* Start and end position, no vertical translation */
+  }
+  50% {
+    transform: translateY(-18px); /* Middle position, moves up by 10px */
+  }
+}
+
+/* Apply the animation to the player's hand image */
+.player-hand {
+  animation: playerHandMotion 0.45s infinite ; /* Animation name, duration, and looping */
+}
+
+
+/* Define the animation for the computer's hand (inverted) */
+@keyframes computerHandMotion {
+  0%, 100% {
+    transform: translateY(0); /* Start and end position, no vertical translation */
+  }
+  50% {
+    transform: translateY(18px); /* Middle position, moves down by 10px (inverted) */
+  }
+}
+
+/* Apply the animation to the computer's hand image (inverted) */
+.computer-hand {
+  animation: computerHandMotion 0.45s infinite; /* Animation name, duration, and looping */
+}
+
+
+
+
+
+
+
+
